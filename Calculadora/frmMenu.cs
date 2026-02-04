@@ -1,3 +1,11 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+
 namespace Calculadora
 {
     public partial class frmMenu : Form
@@ -7,12 +15,17 @@ namespace Calculadora
             InitializeComponent();
         }
 
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void archivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void calculadoraSimpleToolStripMenuItem_Click(object sender, EventArgs e)
+        private void calculadoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCalculadora calculadoraSimple = new frmCalculadora();
             calculadoraSimple.Show();
@@ -20,8 +33,8 @@ namespace Calculadora
 
         private void burbujaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frnBurbuja burbuja=new frnBurbuja();
-            burbuja.Show();
+            frnBurbuja burbuja = new frnBurbuja(); 
+            burbuja.Show(); 
         }
     }
 }

@@ -3,12 +3,12 @@
     partial class frmMenu
     {
         /// <summary>
-        /// Required designer variable.
+        ///  Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Clean up any resources being used.
+        ///  Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,57 +23,57 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
+            mnsPrincipal = new MenuStrip();
             archivoToolStripMenuItem = new ToolStripMenuItem();
-            archivoToolStripMenuItem1 = new ToolStripMenuItem();
+            salirToolStripMenuItem = new ToolStripMenuItem();
             aplicacionesToolStripMenuItem = new ToolStripMenuItem();
-            calculadoraToolStripMenuItem = new ToolStripMenuItem();
+            calculadoraSimpleToolStripMenuItem = new ToolStripMenuItem();
             ordenamientosToolStripMenuItem = new ToolStripMenuItem();
             burbujaToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            mnsPrincipal.SuspendLayout();
             SuspendLayout();
             // 
-            // menuStrip1
+            // mnsPrincipal
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, aplicacionesToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            mnsPrincipal.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, aplicacionesToolStripMenuItem });
+            mnsPrincipal.Location = new Point(0, 0);
+            mnsPrincipal.Name = "mnsPrincipal";
+            mnsPrincipal.Size = new Size(800, 24);
+            mnsPrincipal.TabIndex = 0;
+            mnsPrincipal.Text = "menuStrip1";
             // 
             // archivoToolStripMenuItem
             // 
-            archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { archivoToolStripMenuItem1 });
+            archivoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { salirToolStripMenuItem });
             archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             archivoToolStripMenuItem.Size = new Size(60, 20);
             archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // archivoToolStripMenuItem1
+            // salirToolStripMenuItem
             // 
-            archivoToolStripMenuItem1.Name = "archivoToolStripMenuItem1";
-            archivoToolStripMenuItem1.Size = new Size(96, 22);
-            archivoToolStripMenuItem1.Text = "Salir";
-            archivoToolStripMenuItem1.Click += archivoToolStripMenuItem1_Click;
+            salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            salirToolStripMenuItem.Size = new Size(96, 22);
+            salirToolStripMenuItem.Text = "Salir";
+            salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // aplicacionesToolStripMenuItem
             // 
-            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraToolStripMenuItem, ordenamientosToolStripMenuItem });
+            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraSimpleToolStripMenuItem, ordenamientosToolStripMenuItem });
             aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             aplicacionesToolStripMenuItem.Size = new Size(86, 20);
             aplicacionesToolStripMenuItem.Text = "Aplicaciones";
             // 
-            // calculadoraToolStripMenuItem
+            // calculadoraSimpleToolStripMenuItem
             // 
-            calculadoraToolStripMenuItem.Name = "calculadoraToolStripMenuItem";
-            calculadoraToolStripMenuItem.Size = new Size(180, 22);
-            calculadoraToolStripMenuItem.Text = "Calculadora";
-            calculadoraToolStripMenuItem.Click += calculadoraToolStripMenuItem_Click;
+            calculadoraSimpleToolStripMenuItem.Name = "calculadoraSimpleToolStripMenuItem";
+            calculadoraSimpleToolStripMenuItem.Size = new Size(180, 22);
+            calculadoraSimpleToolStripMenuItem.Text = "Calculadora simple";
+            calculadoraSimpleToolStripMenuItem.Click += calculadoraSimpleToolStripMenuItem_Click;
             // 
             // ordenamientosToolStripMenuItem
             // 
@@ -94,24 +94,23 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            MainMenuStrip = menuStrip1;
+            Controls.Add(mnsPrincipal);
+            MainMenuStrip = mnsPrincipal;
             Name = "frmMenu";
             Text = "Menu";
-            Load += frmMenu_Load;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            mnsPrincipal.ResumeLayout(false);
+            mnsPrincipal.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
+        private MenuStrip mnsPrincipal;
         private ToolStripMenuItem archivoToolStripMenuItem;
-        private ToolStripMenuItem archivoToolStripMenuItem1;
+        private ToolStripMenuItem salirToolStripMenuItem;
         private ToolStripMenuItem aplicacionesToolStripMenuItem;
-        private ToolStripMenuItem calculadoraToolStripMenuItem;
+        private ToolStripMenuItem calculadoraSimpleToolStripMenuItem;
         private ToolStripMenuItem ordenamientosToolStripMenuItem;
         private ToolStripMenuItem burbujaToolStripMenuItem;
     }
