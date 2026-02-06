@@ -17,6 +17,18 @@ namespace Calculadora.Formularios
             InitializeComponent();
         }
 
+        private void verificarRegistro()
+        {
+            if (Personas.Count == 0)
+            {
+                BTNeliminar.Enabled = false;
+            }
+            else
+            {
+                BTNeliminar.Enabled = true;
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -49,16 +61,31 @@ namespace Calculadora.Formularios
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (tabControl1.SelectedIndex >= 1)
             {
-                DTGmostrar.DataSource = null;
-                DTGmostrar.DataSource = Personas;
+
+                DTGregistro.DataSource = null;
+                DTGregistro.DataSource = Personas;
+                verificarRegistro();
             }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BTNeliminar_Click(object sender, EventArgs e)
+        {
+            Personas.RemoveAt(DTGregistro.CurrentRow.Index);
+            DTGregistro.DataSource = null;
+            DTGregistro.DataSource = Personas;
+            verificarRegistro();
         }
     }
 }

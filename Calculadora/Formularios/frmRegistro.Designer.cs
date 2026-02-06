@@ -38,11 +38,17 @@
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
-            DTGmostrar = new DataGridView();
+            splitContainer1 = new SplitContainer();
+            DTGregistro = new DataGridView();
+            BTNeliminar = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DTGmostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
+            splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DTGregistro).BeginInit();
             SuspendLayout();
             // 
             // lblNombre
@@ -141,7 +147,7 @@
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(DTGmostrar);
+            tabPage2.Controls.Add(splitContainer1);
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
@@ -149,16 +155,45 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Mostrar";
             tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Click += tabPage2_Click;
             // 
-            // DTGmostrar
+            // splitContainer1
             // 
-            DTGmostrar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DTGmostrar.Location = new Point(18, 6);
-            DTGmostrar.Name = "DTGmostrar";
-            DTGmostrar.RowHeadersWidth = 62;
-            DTGmostrar.Size = new Size(1005, 358);
-            DTGmostrar.TabIndex = 0;
-            DTGmostrar.CellContentClick += dataGridView1_CellContentClick;
+            splitContainer1.Location = new Point(3, 0);
+            splitContainer1.Name = "splitContainer1";
+            splitContainer1.Orientation = Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(DTGregistro);
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Controls.Add(BTNeliminar);
+            splitContainer1.Size = new Size(1030, 361);
+            splitContainer1.SplitterDistance = 270;
+            splitContainer1.TabIndex = 1;
+            // 
+            // DTGregistro
+            // 
+            DTGregistro.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DTGregistro.Dock = DockStyle.Fill;
+            DTGregistro.Location = new Point(0, 0);
+            DTGregistro.Name = "DTGregistro";
+            DTGregistro.RowHeadersWidth = 62;
+            DTGregistro.Size = new Size(1030, 270);
+            DTGregistro.TabIndex = 1;
+            // 
+            // BTNeliminar
+            // 
+            BTNeliminar.Enabled = false;
+            BTNeliminar.Location = new Point(870, 19);
+            BTNeliminar.Name = "BTNeliminar";
+            BTNeliminar.Size = new Size(112, 34);
+            BTNeliminar.TabIndex = 0;
+            BTNeliminar.Text = "Eliminar";
+            BTNeliminar.UseVisualStyleBackColor = true;
+            BTNeliminar.Click += BTNeliminar_Click;
             // 
             // frmRegistro
             // 
@@ -174,7 +209,11 @@
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DTGmostrar).EndInit();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DTGregistro).EndInit();
             ResumeLayout(false);
         }
 
@@ -190,6 +229,8 @@
         private TabControl tabControl1;
         private TabPage tabPage1;
         private TabPage tabPage2;
-        private DataGridView DTGmostrar;
+        private SplitContainer splitContainer1;
+        private DataGridView DTGregistro;
+        private Button BTNeliminar;
     }
 }
