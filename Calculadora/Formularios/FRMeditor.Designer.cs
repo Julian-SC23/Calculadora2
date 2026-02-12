@@ -38,10 +38,12 @@
             toolStripSeparator1 = new ToolStripSeparator();
             toolStripSeparator2 = new ToolStripSeparator();
             SSeditor = new StatusStrip();
+            TSstatus = new ToolStripStatusLabel();
             RTBeditor = new RichTextBox();
             OFPeditor = new OpenFileDialog();
             SFDeditor = new SaveFileDialog();
             MSeditor.SuspendLayout();
+            SSeditor.SuspendLayout();
             SuspendLayout();
             // 
             // MSeditor
@@ -64,56 +66,66 @@
             // nuevoToolStripMenuItem
             // 
             nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            nuevoToolStripMenuItem.Size = new Size(270, 34);
+            nuevoToolStripMenuItem.Size = new Size(228, 34);
             nuevoToolStripMenuItem.Text = "Nuevo";
             nuevoToolStripMenuItem.Click += nuevoToolStripMenuItem_Click;
             // 
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            abrirToolStripMenuItem.Size = new Size(270, 34);
+            abrirToolStripMenuItem.Size = new Size(228, 34);
             abrirToolStripMenuItem.Text = "Abrir";
             abrirToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
             // 
             // guardarToolStripMenuItem
             // 
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            guardarToolStripMenuItem.Size = new Size(270, 34);
+            guardarToolStripMenuItem.Size = new Size(228, 34);
             guardarToolStripMenuItem.Text = "Guardar";
             guardarToolStripMenuItem.Click += guardarToolStripMenuItem_Click;
             // 
             // guardarComoToolStripMenuItem
             // 
             guardarComoToolStripMenuItem.Name = "guardarComoToolStripMenuItem";
-            guardarComoToolStripMenuItem.Size = new Size(270, 34);
+            guardarComoToolStripMenuItem.Size = new Size(228, 34);
             guardarComoToolStripMenuItem.Text = "Guardar como";
             guardarComoToolStripMenuItem.Click += guardarComoToolStripMenuItem_Click;
             // 
             // salirToolStripMenuItem
             // 
             salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            salirToolStripMenuItem.Size = new Size(270, 34);
+            salirToolStripMenuItem.Size = new Size(228, 34);
             salirToolStripMenuItem.Text = "Salir";
             salirToolStripMenuItem.Click += salirToolStripMenuItem_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(267, 6);
+            toolStripSeparator1.Size = new Size(225, 6);
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(267, 6);
+            toolStripSeparator2.Size = new Size(225, 6);
             // 
             // SSeditor
             // 
             SSeditor.ImageScalingSize = new Size(24, 24);
-            SSeditor.Location = new Point(0, 428);
+            SSeditor.Items.AddRange(new ToolStripItem[] { TSstatus });
+            SSeditor.Location = new Point(0, 418);
             SSeditor.Name = "SSeditor";
-            SSeditor.Size = new Size(800, 22);
+            SSeditor.Size = new Size(800, 32);
             SSeditor.TabIndex = 1;
             SSeditor.Text = "statusStrip1";
+            // 
+            // TSstatus
+            // 
+            TSstatus.Name = "TSstatus";
+            TSstatus.Size = new Size(77, 25);
+            TSstatus.Tag = "";
+            TSstatus.Text = "Palabras";
+            TSstatus.Click += TSstatus_Click;
+            TSstatus.TextChanged += TSstatus_TextChanged;
             // 
             // RTBeditor
             // 
@@ -122,6 +134,7 @@
             RTBeditor.Size = new Size(800, 380);
             RTBeditor.TabIndex = 2;
             RTBeditor.Text = "";
+            RTBeditor.TextChanged += RTBeditor_TextChanged;
             // 
             // OFPeditor
             // 
@@ -145,6 +158,8 @@
             Text = "FRMeditor";
             MSeditor.ResumeLayout(false);
             MSeditor.PerformLayout();
+            SSeditor.ResumeLayout(false);
+            SSeditor.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -164,5 +179,6 @@
         private ToolStripSeparator toolStripSeparator2;
         private OpenFileDialog OFPeditor;
         private SaveFileDialog SFDeditor;
+        private ToolStripStatusLabel TSstatus;
     }
 }

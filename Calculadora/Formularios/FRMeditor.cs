@@ -13,6 +13,8 @@ namespace Calculadora.Formularios
     {
         bool saver = false;
         String path = "";
+        int contadorpalabras = 0;
+        String texto;
         public FRMeditor()
         {
             InitializeComponent();
@@ -24,10 +26,10 @@ namespace Calculadora.Formularios
             {
                 if (File.Exists(OFPeditor.FileName))
                 {
-                    
-                    
-                        RTBeditor.Text = File.ReadAllText(OFPeditor.FileName);
-                    
+
+
+                    RTBeditor.Text = File.ReadAllText(OFPeditor.FileName);
+
 
                 }
             }
@@ -38,11 +40,11 @@ namespace Calculadora.Formularios
             if (saver = false)
             {
                 guardarjeje();
-                saver= true;
+                saver = true;
             }
             else
             {
-                using (StreamWriter archivo = new StreamWriter(path)) 
+                using (StreamWriter archivo = new StreamWriter(path))
                 {
                     archivo.Write(RTBeditor.Text);
                 }
@@ -77,6 +79,33 @@ namespace Calculadora.Formularios
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void TSstatus_TextChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void RTBeditor_TextChanged(object sender, EventArgs e)
+        {
+             texto = RTBeditor.Text;
+            String[] palabras = texto.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            
+            contadorpalabras = palabras.Length;
+            TSstatus.Text = $"Palabras: {contadorpalabras}";
+        }
+
+        private void TSstatus_Click(object sender, EventArgs e)
+        {
+            String[] palabras = texto.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+            String[] parrafos = texto.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            MessageBox.Show($"\tEstadisticas " +
+                $"\nPalabras: "
+                +TSstatus.Text+"\nLetras: "+texto.Length
+                +"\nParrafos: "+parrafos.Length
+                +"\nNúmero de palabras: " + palabras.Length);
+
         }
     }
 }
