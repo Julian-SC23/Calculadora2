@@ -39,6 +39,7 @@
             temporizadoresToolStripMenuItem = new ToolStripMenuItem();
             relojToolStripMenuItem = new ToolStripMenuItem();
             editorToolStripMenuItem = new ToolStripMenuItem();
+            contadorToolStripMenuItem = new ToolStripMenuItem();
             saveFileDialog1 = new SaveFileDialog();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -70,7 +71,7 @@
             // 
             // aplicacionesToolStripMenuItem
             // 
-            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraToolStripMenuItem, ordenamientosToolStripMenuItem, registroToolStripMenuItem, temporizadoresToolStripMenuItem, editorToolStripMenuItem });
+            aplicacionesToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { calculadoraToolStripMenuItem, ordenamientosToolStripMenuItem, registroToolStripMenuItem, temporizadoresToolStripMenuItem, editorToolStripMenuItem, contadorToolStripMenuItem });
             aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             aplicacionesToolStripMenuItem.Size = new Size(126, 29);
             aplicacionesToolStripMenuItem.Text = "Aplicaciones";
@@ -124,6 +125,13 @@
             editorToolStripMenuItem.Text = "Editor";
             editorToolStripMenuItem.Click += editorToolStripMenuItem_Click;
             // 
+            // contadorToolStripMenuItem
+            // 
+            contadorToolStripMenuItem.Name = "contadorToolStripMenuItem";
+            contadorToolStripMenuItem.Size = new Size(270, 34);
+            contadorToolStripMenuItem.Text = "Contador";
+            contadorToolStripMenuItem.Click += contadorToolStripMenuItem_Click;
+            // 
             // frmMenu
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -155,5 +163,6 @@
         private ToolStripMenuItem relojToolStripMenuItem;
         private ToolStripMenuItem editorToolStripMenuItem;
         private SaveFileDialog saveFileDialog1;
+        private ToolStripMenuItem contadorToolStripMenuItem;
     }
 }

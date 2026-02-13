@@ -89,9 +89,9 @@ namespace Calculadora.Formularios
 
         private void RTBeditor_TextChanged(object sender, EventArgs e)
         {
-             texto = RTBeditor.Text;
+            texto = RTBeditor.Text;
             String[] palabras = texto.Split(new char[] { ' ', '\n', '\r', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
             contadorpalabras = palabras.Length;
             TSstatus.Text = $"Palabras: {contadorpalabras}";
         }
@@ -102,10 +102,26 @@ namespace Calculadora.Formularios
             String[] parrafos = texto.Split(new char[] { '\n' }, StringSplitOptions.RemoveEmptyEntries);
             MessageBox.Show($"\tEstadisticas " +
                 $"\nPalabras: "
-                +TSstatus.Text+"\nLetras: "+texto.Length
-                +"\nParrafos: "+parrafos.Length
-                +"\nNúmero de palabras: " + palabras.Length);
+                + TSstatus.Text + "\nLetras: " + texto.Length
+                + "\nParrafos: " + parrafos.Length
+                + "\nNúmero de palabras: " + palabras.Length);
 
+        }
+
+        private void fuenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FDeditor.ShowDialog() == DialogResult.OK)
+            {
+                RTBeditor.Font = FDeditor.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (CDeditor.ShowDialog() == DialogResult.OK)
+            {
+                RTBeditor.ForeColor = CDeditor.Color;
+            }
         }
     }
 }

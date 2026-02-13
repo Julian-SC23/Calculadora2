@@ -37,11 +37,16 @@
             salirToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator1 = new ToolStripSeparator();
             toolStripSeparator2 = new ToolStripSeparator();
+            editarToolStripMenuItem = new ToolStripMenuItem();
+            fuenteToolStripMenuItem = new ToolStripMenuItem();
             SSeditor = new StatusStrip();
             TSstatus = new ToolStripStatusLabel();
             RTBeditor = new RichTextBox();
             OFPeditor = new OpenFileDialog();
             SFDeditor = new SaveFileDialog();
+            FDeditor = new FontDialog();
+            CDeditor = new ColorDialog();
+            colorToolStripMenuItem = new ToolStripMenuItem();
             MSeditor.SuspendLayout();
             SSeditor.SuspendLayout();
             SuspendLayout();
@@ -49,7 +54,7 @@
             // MSeditor
             // 
             MSeditor.ImageScalingSize = new Size(24, 24);
-            MSeditor.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem });
+            MSeditor.Items.AddRange(new ToolStripItem[] { archivoToolStripMenuItem, editarToolStripMenuItem });
             MSeditor.Location = new Point(0, 0);
             MSeditor.Name = "MSeditor";
             MSeditor.Size = new Size(800, 33);
@@ -108,6 +113,20 @@
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(225, 6);
             // 
+            // editarToolStripMenuItem
+            // 
+            editarToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { fuenteToolStripMenuItem, colorToolStripMenuItem });
+            editarToolStripMenuItem.Name = "editarToolStripMenuItem";
+            editarToolStripMenuItem.Size = new Size(73, 29);
+            editarToolStripMenuItem.Text = "Editar";
+            // 
+            // fuenteToolStripMenuItem
+            // 
+            fuenteToolStripMenuItem.Name = "fuenteToolStripMenuItem";
+            fuenteToolStripMenuItem.Size = new Size(270, 34);
+            fuenteToolStripMenuItem.Text = "Fuente";
+            fuenteToolStripMenuItem.Click += fuenteToolStripMenuItem_Click;
+            // 
             // SSeditor
             // 
             SSeditor.ImageScalingSize = new Size(24, 24);
@@ -145,6 +164,13 @@
             // 
             SFDeditor.Filter = "\"Archivos de texto\" | *.txt";
             // 
+            // colorToolStripMenuItem
+            // 
+            colorToolStripMenuItem.Name = "colorToolStripMenuItem";
+            colorToolStripMenuItem.Size = new Size(270, 34);
+            colorToolStripMenuItem.Text = "Color";
+            colorToolStripMenuItem.Click += colorToolStripMenuItem_Click;
+            // 
             // FRMeditor
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -180,5 +206,10 @@
         private OpenFileDialog OFPeditor;
         private SaveFileDialog SFDeditor;
         private ToolStripStatusLabel TSstatus;
+        private ToolStripMenuItem editarToolStripMenuItem;
+        private ToolStripMenuItem fuenteToolStripMenuItem;
+        private FontDialog FDeditor;
+        private ToolStripMenuItem colorToolStripMenuItem;
+        private ColorDialog CDeditor;
     }
 }
