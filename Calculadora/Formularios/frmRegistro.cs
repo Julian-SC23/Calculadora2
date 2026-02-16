@@ -7,11 +7,14 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+
+
 namespace Calculadora.Formularios
 {
     public partial class frmRegistro : Form
     {
         List<Persona> Personas = new List<Persona>();
+        
         public frmRegistro()
         {
             InitializeComponent();

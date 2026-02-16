@@ -23,7 +23,7 @@ namespace Calculadora.Formularios
             TMRcontador.Interval = trackBar1.Value * 200;
             TMRcontador.Start();
         }
-
+        
         private void LBcuenta_Click(object sender, EventArgs e)
         {
 

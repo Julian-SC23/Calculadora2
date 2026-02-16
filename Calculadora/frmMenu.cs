@@ -61,5 +61,11 @@ namespace Calculadora
             FRcontador contador = new FRcontador();
             contador.Show();
         }
+
+        private void xMLDirectorioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMhmxlaccess xmlAccess = new FRMhmxlaccess();
+            xmlAccess.Show();
+        }
     }
 }
