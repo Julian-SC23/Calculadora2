@@ -25,17 +25,27 @@ namespace Calculadora.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             XElement xml = new XElement("Persona");
-            xml.Add(new XElement("Persona"));
 
             for (int i = 0; i < DGpersona.Rows.Count; i++)
             {
-                new XmlElement("Personas"),
-                    new XAttribute("ID", DGpersona.Rows[i].Cells[0].Value),
-                    new XElement("Nombre", DGpersona.Rows[i].Cells[1].Value),
-                    new XElement("Telefono", DGpersona.Rows[i].Cells[2].Value
-                ));
+                xml.Add(
+                    new XElement("Personas"), new XAttribute("ID", DGpersona.Rows[i].Cells[0].Value),
+                new XElement("Nombre", DGpersona.Rows[i].Cells[1].Value),
+                    new XElement("Telefono", DGpersona.Rows[i].Cells[2].Value)));
             }
-        Xml.save("Personas.xml");
+            try
+            {
+                xml.Save("Personas.xml");
+                MessageBox.Show("Archivo XML guardado exitosamente.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar el archivo XML: " + ex.Message);
+            }
         }
     }
 }
+    
+        
+
+
